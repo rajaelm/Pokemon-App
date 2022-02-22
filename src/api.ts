@@ -1,5 +1,6 @@
+
 const fetchPokemon = async ({
-  pageParam = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=20"
+  pageParam = "https://pokeapi.co/api/v2/pokemon?offset=0&limit=10"
 }) => {
   const request = await fetch(pageParam);
   const { results, next } = await request.json();

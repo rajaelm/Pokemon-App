@@ -1,5 +1,8 @@
 import React, { FC } from 'react';
 import { useQuery } from 'react-query';
+import { styled, Box } from '@mui/system';
+import { fetchStats } from '../api';
+import { Modal } from '@material-ui/core';
 
 interface PkmnStats {
 	spriteUrl: string;
@@ -15,17 +18,28 @@ const formatStats = (data: any): PkmnStats => {
 	};
 };
 
+const style = {
+	position: "absolute" as "absolute",
+	top: "50%",
+	left: "50%",
+	transform: "translate(-50%, -50%)",
+	width: 400,
+	bgcolor: "background.paper",
+	border: "2px solid #000",
+	boxShadow: 24,
+	p: 4
+  };
 interface Props {
 	url: string;
 }
-const url = "https://pokeapi.co/api/v2/pokemon"
-const Pokemon: FC<Props> = ( pageParam ) => {
 
-const fetchStats = async (url: string) => {
-	const res = await fetch(url);
-	return res.json();
-  }
-	const { data, isLoading, isError } = useQuery(['pokemon', pageParam], ({pageParam=url})=> fetchStats(pageParam) ,{
+const Pokemon: FC<Props> = ( pageParam ) => {
+	const [open, setOpen] = React.useState(false);
+	const handleOpen = () => setOpen(true);
+	const handleClose = () => setOpen(false);
+
+
+	const { data, isLoading, isError } = useQuery(['pokemon', pageParam], ({pageParam})=> fetchStats(pageParam) ,{
 		staleTime: Infinity
 	})
 
@@ -35,7 +49,24 @@ const fetchStats = async (url: string) => {
 	const stats = formatStats(data);
 
 	return (
-		<section className="card">
+		<Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+			<img
+				className="sprite"
+				src={stats.spriteUrl}
+				alt={`${stats.name}`}
+				/>
+          <div>
+		  <p className="name">{stats.name}</p>
+          </div>
+        </Box>
+      </Modal>
+	/* 	<section className="card">
 			<header className="card__header">
 				<img
 					className="sprite"
@@ -48,7 +79,7 @@ const fetchStats = async (url: string) => {
 				<p className="name">{stats.name}</p>
 				
 			</main>
-		</section>
+		</section> */
 	);
 };
 

@@ -17,7 +17,7 @@
 
 body {
 	display: grid;
-	
+	align-content: center;
 	overflow-x: hidden;
 	font-family: 'Roboto', 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans',
 		sans-serif;
@@ -25,7 +25,17 @@ body {
 	width: 100%;
 	background-color: var(--bg);
 }
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	align-self: center;
+	flex-wrap: wrap;
+	row-gap: 10px;
+  	column-gap: 20px;
+	justify-content: center;
 
+
+}
 .header {
 	align-content: center;
 	background-color: var(--light-blue);
@@ -43,7 +53,7 @@ body {
 
 .card {
 	flex-flow: row;
-	width: 25%;
+	width: 20em;
 	justify-content: center;
 	background-color: var(--white);
 	border-radius: var(--base);
