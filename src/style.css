@@ -50,9 +50,13 @@ body {
 	padding: 0 calc(var(--base) * 9);
 }
 
-
+.sprite{
+	justify-content: center;
+	align-items: center;
+	height: 100%;
+}
 .card {
-	flex-flow: row;
+	flex-flow: column;
 	width: 20em;
 	justify-content: center;
 	background-color: var(--white);
