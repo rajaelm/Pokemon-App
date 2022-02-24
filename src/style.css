@@ -28,6 +28,7 @@ body {
 }
 .toolbar{
 	background-color: var(--red);
+	
 }
 .pokebutton{
 	background-image: url('../public/logo192.png');
@@ -103,9 +104,19 @@ body {
   border: none;
   color: var(--bg);
   padding: calc(var(--base) * 2) calc(var(--base) * 5);
-  background-color: var(--light-blue);
+  background-color: var(--red);
 }
 .image{
 	height: 30px;
 	width: 30px;
 }
+.footer {
+	background-color: var(--red);
+	border-top:2px solid var(--bg);
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	color: white;
+	font-size: 25px;
+	height:fit-content
+   }

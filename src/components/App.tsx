@@ -2,6 +2,7 @@ import {
 	QueryClient,
 	QueryClientProvider
   } from "react-query";
+import Footer from "./footer";
 import Header from "./header";
 import PokemonList from "./pokemonList";
 
@@ -15,6 +16,7 @@ import PokemonList from "./pokemonList";
 		<div className="App">
 			<Header/>
 		  <PokemonList />
+		  <Footer/>
 		</div>
 	  </QueryClientProvider>
 	);
