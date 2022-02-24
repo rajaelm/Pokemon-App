@@ -1,92 +1,111 @@
 :root {
-	/* COLORS */
-	--yellow: #ffcb05;
-	--light-blue: #3d7dca;
-	--blue: #003a70;
-	--green: #1a936f;
-	--red: #ff4236;
-	--white: #fcfcfc;
-	--bg: #ececec;
+  /* COLORS */
+  --yellow: #ffcb05;
+  --light-blue: #3d7dca;
+  --blue: #003a70;
+  --green: #1a936f;
+  --red: #ec5f55;
+  --white: #fcfcfc;
+  --bg: #ececec;
 
-	/* SIZING */
-	--base: 0.45rem;
+  /* SIZING */
+  --base: 0.45rem;
 
-	/* BOX SHADOW */
-	--shadow: 0 7px 7px rgba(150, 170, 180, 0.5);
+  /* BOX SHADOW */
+  --shadow: 0 7px 7px rgba(150, 170, 180, 0.5);
 }
 
 body {
-	display: grid;
-	align-content: center;
-	overflow-x: hidden;
-	font-family: 'Roboto', 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans',
-		sans-serif;
-	height: 100%;
-	width: 100%;
-	background-color: var(--bg);
+  display: grid;
+  align-content: center;
+  overflow-x: hidden;
+  font-family: "Roboto", "Segoe UI", Oxygen, Ubuntu, Cantarell, "Open Sans",
+    sans-serif;
+  height: 100%;
+  width: 100%;
+  background-color: var(--bg)
+  
 }
-.flex-container{
-	display: flex;
-	flex-direction: row;
-	align-self: center;
-	flex-wrap: wrap;
-	row-gap: 10px;
-  	column-gap: 20px;
-	justify-content: center;
+.toolbar{
+	background-color: var(--red);
+}
+.pokebutton{
+	background-image: url('../public/logo192.png');
+}
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
 
-
-}
-.header {
-	align-content: center;
-	background-color: var(--light-blue);
-	text-align: center;
-}
 .title {
-	display: flex;
-	align-items: center;
-  	justify-content: center;
-	text-transform: uppercase;
-	font-weight: normal;
-	padding: 0 calc(var(--base) * 9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-transform: uppercase;
+  font-weight: normal;
+  padding: 0 calc(var(--base) * 9);
+}
+.statBlock {
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-transform: capitalize;
 }
 
-.sprite{
-	justify-content: center;
-	align-items: center;
-	height: 100%;
+.sprite {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 .card {
-	flex-flow: column;
-	width: 20em;
-	justify-content: center;
-	background-color: var(--white);
-	border-radius: var(--base);
-	color: #000;
-	margin-bottom: 20px;
-	filter: drop-shadow(var(--shadow));
-	height: calc(var(--base) * 20);
-	
+  
+  width: 20em;
+  justify-content: center;
+  background-color: var(--white);
+  border-radius: var(--base);
+  color: #000;
+  margin-bottom: 20px;
+  filter: drop-shadow(var(--shadow));
+  height: calc(var(--base) * 20);
 }
 .card__body {
-	align-items: flex-start;
-	display: flex;
-	height: 100%;
-	justify-content: center;
-	align-items: center;
-	padding-left: 20px;
+  
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  padding-left: 20px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.namecard {
+  color:rgb(56, 56, 56);
+  text-transform: capitalize;
+  font-size: 23px;
+  font-family: 'Roboto';
 }
 .name {
-	text-transform: capitalize;
-	font-size: 19px;
+  text-transform: capitalize;
+  font-size: 19px;
 }
 
-
 .load-more {
-	grid-column: span 3;
-	margin-top: calc(var(--base) * 6);
-	margin-bottom: calc(var(--base) * 12);
-	border: none;
-	color: var(--bg);
-	padding: calc(var(--base) * 2) calc(var(--base) * 5);
-	background-color: var(--light-blue);
+  grid-column: span 3;
+  margin-top: calc(var(--base) * 6);
+  margin-bottom: calc(var(--base) * 12);
+  border: none;
+  color: var(--bg);
+  padding: calc(var(--base) * 2) calc(var(--base) * 5);
+  background-color: var(--light-blue);
+}
+.image{
+	height: 30px;
+	width: 30px;
 }

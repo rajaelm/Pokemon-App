@@ -18,10 +18,19 @@ const fetchStats= async (pageParam: any) => {
   return { response: results };
   
 };
+
+const getImage= async (id:number) => {
+  const url = "https://pokeapi.co/api/v2/pokemon/" + id;
+  const results = await axios.get(url);
+ 
+ 
+  return { response: results.data.sprites.front_default };
+  
+};
 /* const fetchStats =  (pageParam: any) => {
   const res = axios.get(pageParam);
  
 
   return res;
 } */
-export { fetchPokemon,fetchStats}
+export { fetchPokemon,fetchStats,getImage}

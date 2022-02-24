@@ -1,7 +1,7 @@
 import { useInfiniteQuery } from "react-query";
 import useIntersectionObserver from "../hooks/use-intersection-observer";
 import { useRef, useState } from "react";
-import { fetchPokemon } from "./api";
+import { fetchPokemon, getImage } from "./api";
 import Box from "@material-ui/core/Box";
 import React, { Fragment } from "react";
 import { Modal } from "@material-ui/core";
@@ -18,7 +18,7 @@ function PokemonList() {
     onIntersect: () => fetchNextPage(),
     enabled: hasNextPage,
   });
-  const [pokeid, setPokeid] = useState(0);
+  const [pokeid, setPokeid] = useState(1);
   const [open, setOpen] = React.useState(false);
   const handleOpen = (id: number) => {
     setPokeid(id);
@@ -51,13 +51,18 @@ function PokemonList() {
                     (pokemon: { name: string; url: string }) => (
                       <>
                         <div className="card" key={id}>
-                          <main
+                          <main 
                             className="card__body"
                             onClick={() => handleOpen(id)}
                           >
-                            <p>#{id} : </p>
-                            <br />
-                            <p className="name">{pokemon.name}</p>
+                            <div className="Block">
+                              <p>#{id}  </p>
+                              <br />
+                              <p className="name">{pokemon.name}</p>
+                             
+                               
+                              </div>
+                             
                           </main>
                         </div>
                       </>
