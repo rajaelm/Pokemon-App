@@ -87,6 +87,7 @@ body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .namecard {
+  width: 100%;
   color:rgb(56, 56, 56);
   text-transform: capitalize;
   font-size: 23px;
