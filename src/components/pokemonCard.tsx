@@ -22,8 +22,9 @@ const PokemonCard: FC<Props> = ({ data }) => {
     transform: "translate(-50%, -50%)",
     width: "300px",
     bgcolor: "background.paper",
-    border: "2px solid #000",
+    border: "2px solid #fff",
     boxShadow: 24,
+    borderRadius: "10%",
     p: 4,
   };
   return (

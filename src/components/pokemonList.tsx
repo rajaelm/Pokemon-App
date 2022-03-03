@@ -1,14 +1,11 @@
-import { useInfiniteQuery } from "react-query";
 import useIntersectionObserver from "../hooks/use-intersection-observer";
 import { useRef } from "react";
-import { fetchPokemon, getImage } from "./api";
-
+import CircularProgress from '@mui/material/CircularProgress';
 import PokemonCard from "./pokemonCard";
+import { Box } from "@material-ui/core";
+import getpokemons from "./getpokemons";
 function PokemonList() {
-  const { data, isLoading, fetchNextPage, hasNextPage, isFetchingNextPage } =
-    useInfiniteQuery("pokemons", fetchPokemon, {
-      getNextPageParam: (lastPage) => lastPage.nextPage,
-    });
+  const { data, isLoading, fetchNextPage, hasNextPage } =getpokemons();
 
   const loadMoreBtn = useRef<HTMLButtonElement>(null);
   useIntersectionObserver({
@@ -24,19 +21,12 @@ function PokemonList() {
       ) : (
         <>
         <PokemonCard data={data}/>
-         
-          <button
-            className="load-more"
+          <Box style={{display: 'flex', justifyContent: 'center'}}>
+            <CircularProgress  data-testid="spin" className="load-more"
             ref={loadMoreBtn}
             onClick={() => fetchNextPage()}
-            disabled={!hasNextPage}
-          >
-            {isFetchingNextPage
-              ? "Loading more..."
-              : hasNextPage
-              ? "Load More"
-              : "Nothing more to load"}
-          </button>
+            />
+          </Box>
         </>
       )}
     </>

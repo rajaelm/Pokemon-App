@@ -1,9 +1,25 @@
+/**
+ * @jest-environment jsdom
+ */
 import React from "react";
-import { render, fireEvent, waitFor} from "@testing-library/react";
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { render,screen} from "@testing-library/react";
 import PokemonList from "../components/pokemonList";
+describe ('pokemonList', () => {
+ describe('while loading',() => {
+    it.todo("render a loader");
+  })
+  describe('with an error', ()=>{
+    it.todo("render a n error message");
+  })
+})
+
+
+
 /* 
-describe("<PokemonList />", () => {
-    test("should display image of pokemon with his stats", async () => {
-      // ???
-    });
-  }); */
+describe('render spin', () => {
+  it('spin' ,() =>{
+    render(<PokemonList />);
+  
+  });
+}); */
