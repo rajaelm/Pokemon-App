@@ -16,7 +16,7 @@ interface PkmnStats {
 const formatStats = (data: any): PkmnStats => {
   return {
     name: data?.data.name,
-    spriteUrl: data?.data.sprites.front_default,
+    spriteUrl: data?.data.sprites?.front_default,
     HP: [data?.data.stats[0].stat.name, data?.data.stats[0].base_stat],
     Attack: [data?.data.stats[1].stat.name, data?.data.stats[1].base_stat],
     SpAttack: [data?.data.stats[2].stat.name, data?.data.stats[2].base_stat],
@@ -33,6 +33,7 @@ interface Props {
 const Pokemon: FC<Props> = ({ id }) => {
   //const { data, isLoading, isError } = useQuery(['pokemon',url], fetchStats,{
   const { data, isLoading, isError } = getpokedetails(id);
+  console.log(JSON.stringify(data));
   if (isLoading) return <p>Loading</p>;
   if (isError) return <p>Error</p>;
 

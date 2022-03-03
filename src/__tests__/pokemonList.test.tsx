@@ -10,16 +10,7 @@ describe ('pokemonList', () => {
     it.todo("render a loader");
   })
   describe('with an error', ()=>{
-    it.todo("render a n error message");
+    it.todo("render an error message");
   })
 })
 
-
-
-/* 
-describe('render spin', () => {
-  it('spin' ,() =>{
-    render(<PokemonList />);
-  
-  });
-}); */
