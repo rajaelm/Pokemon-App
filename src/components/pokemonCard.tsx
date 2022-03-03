@@ -14,6 +14,7 @@ const PokemonCard: FC<Props> = ({ data }) => {
     setPokeid(id);
     setOpen(true);
   };
+
   const handleClose = () => setOpen(false);
   const style = {
     position: "absolute" as "absolute",
@@ -30,7 +31,8 @@ const PokemonCard: FC<Props> = ({ data }) => {
   return (
     <>
       <section className="flex-container">
-        {data?.pages.map(
+     
+        {data?.pages?.map(
           (
             group: { response: { name: string; url: string }[] },
             id: number
@@ -48,7 +50,7 @@ const PokemonCard: FC<Props> = ({ data }) => {
                           <div className="Block">
                             <p>#{id} </p>
                             <br />
-                            <p className="name">{pokemon.name}</p>
+                            <p className="name" data-testid="pokename">{pokemon.name}</p>
                           </div>
                         </main>
                       </div>

@@ -33,9 +33,9 @@ interface Props {
 const Pokemon: FC<Props> = ({ id }) => {
   //const { data, isLoading, isError } = useQuery(['pokemon',url], fetchStats,{
   const { data, isLoading, isError } = getpokedetails(id);
-  console.log(JSON.stringify(data));
-  if (isLoading) return <p>Loading</p>;
-  if (isError) return <p>Error</p>;
+  
+  if (isLoading) return <p data-testid="loading">Loading</p>;
+  if (isError) return <p data-testid="error">Error</p>;
 
   const stats = formatStats(data);
 

@@ -9,14 +9,13 @@ import { screen, render } from "@testing-library/react";
 
 import "@testing-library/jest-dom";
 import PokemonCard from "../components/pokemonCard";
-const data = {
-  result : {
-    name: "pokemon",
-    url: "https://pokeapi.co/api/v2/pokemon/3",
-  },
-};
+import { mockednames } from "../mock/mockdata";
+
 describe("render Pokemon stat", () => {
-  it("Title text and toolbar", () => {
-    //render(<PokemonCard data={data} />);
+  it("render without crashing", () => {
+    
+    const {debug}= render(<PokemonCard data={mockednames} />);
+    debug();
+    expect(screen.getAllByTestId('pokename')).toBeTruthy();
   });
 });

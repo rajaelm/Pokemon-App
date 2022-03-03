@@ -17,10 +17,11 @@ function PokemonList() {
   return (
     <>
       {isLoading ? (
-        <p>loading...</p>
+        <p data-testid="loading">loading...</p>
       ) : (
         <>
         <PokemonCard data={data}/>
+        {console.log(JSON.stringify(data))};
           <Box style={{display: 'flex', justifyContent: 'center'}}>
             <CircularProgress  data-testid="spin" className="load-more"
             ref={loadMoreBtn}
